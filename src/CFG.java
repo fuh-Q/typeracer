@@ -10,7 +10,7 @@ public class CFG {
     static final String[] GAME_HISTORY = { "Most recent", "Highest accuracy", "Highest WPM", "Clear records", "Main Menu" };
 
     // messages
-    static final String MAIN_MENU_TITLE = Colours.GREEN + "Typeracer CLI v1" + Colours.RESET;
+    static final String MAIN_MENU_TITLE = Colours.GREEN + "Typeracer CLI v2" + Colours.RESET;
     static final String MAIN_MENU_FOOTER = Colours.YELLOW + "(ctrl+c to quit...)" + Colours.RESET;
     static final String PICK_MODE_TITLE = "Choose test type";
     static final String QUOTE_TRY_LATER = "Error fetching quote, try again later";
