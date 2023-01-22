@@ -21,12 +21,12 @@ public class Game implements Receiving {
     private boolean pendingQuit = false; // hit esc twice to quit
     private Date startedAt;
     private static final int[] VALID_KEYCODES = {
-        1, 2, 3, 4, 5, 6, 7, 8, 9,
-        10, 11, 12, 14, 16, 17, 18,
-        19, 20, 21, 22, 23, 24, 25,
-        30, 31, 32, 33, 34, 35, 36,
-        37, 38, 39, 40, 44, 45, 46,
-        47, 48, 49, 50, 51, 52, 57,
+        1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
+        11, 12, 14, 16, 17, 18, 19,
+        20, 21, 22, 23, 24, 25, 30,
+        31, 32, 33, 34, 35, 36, 37,
+        38, 39, 40, 44, 45, 46, 47,
+        48, 49, 50, 51, 52, 53, 57,
     }; // the alphabet, numbers, some punctuation, space, backspace, and escape
 
     public Game(String text, GameType type) {
