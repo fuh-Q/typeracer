@@ -31,7 +31,6 @@ public class Game implements Receiving {
 
     public Game(String text, GameType type) {
         this.gameType = type;
-        System.out.println(text.length());
 
         this.internalText = (type == GameType.QUOTE) ? transformQuote(text) : text;
         this.text = Util.wrapIt(text, 120);
@@ -108,6 +107,7 @@ public class Game implements Receiving {
             .replace("!", "1")
             .replace("(", "9")
             .replace(")", "0")
+            .replace("_", "-")
             .replace("\"", "'");
 
         return quote.toLowerCase();
@@ -119,6 +119,8 @@ public class Game implements Receiving {
 
         switch (name) {
             case "Space" -> { return " "; }
+            case "Slash" -> { return "/"; }
+            case "Minus" -> { return "-"; }
             case "Comma" -> { return ","; }
             case "Period" -> { return "."; }
             case "Quote" -> { return "\'"; }
