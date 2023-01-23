@@ -198,7 +198,6 @@ public class Util {
 
             JSONObject json = new JSONObject(respBuf.toString());
             text = (String) json.get("content");
-            System.out.println(text.length());
         }
 
         catch (Exception e) { e.printStackTrace(); }
