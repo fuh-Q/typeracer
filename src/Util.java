@@ -136,20 +136,23 @@ public class Util {
     }
 
     /**
-     * Sets up the records' database file if needed
-     * @throws SQLException Database error
+     * Ported from discord.py lol
+     * @return Whether the output stream supports colour
+     * @see https://github.com/Rapptz/discord.py/blob/master/discord/utils.py#L1240-L1252
      */
-    static void prepareDatabase() throws SQLException {
-        final String SQL = """
-            CREATE TABLE IF NOT EXISTS (
-                timestamp REAL NOT NULL,
-                accuracy REAL NOT NULL,
-                wpm REAL NOT NULL,
-                gamemode TEXT NOT NULL
-            );
-        """;
+    static boolean streamSupportsColour() {
+        if (
+            System.getenv("TERM_PROGRAM") != null &&
+            System.getenv("TERM_PROGRAM").equals("vscode")
+        ) { return true; }
 
-        prepareStatement("records", SQL).executeUpdate();
+        return (
+            System.console() != null
+            && (
+                System.getenv("ANSICON") != null ||
+                System.getenv("WT_SESSION") != null
+            )
+        );
     }
 
     /**

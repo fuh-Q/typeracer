@@ -7,6 +7,11 @@ public class Main {
     }
 
     public static void main(String[] args) {
+        if (!Util.streamSupportsColour()) {
+            System.out.println("Output stream does not support colour");
+            System.exit(1);
+        }
+
         try { GlobalScreen.registerNativeHook(); }
         catch (Exception e) {
             System.err.println("There was a problem registering the native hook.");
